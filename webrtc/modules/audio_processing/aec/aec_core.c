@@ -893,6 +893,7 @@ static void ProcessBlock(AecCore* aec) {
   }
 
   // Block wise delay estimation used for logging
+  // 可以设置取消延时
   if (aec->delay_logging_enabled) {
     int delay_estimate = 0;
     if (WebRtc_AddFarSpectrumFloat(

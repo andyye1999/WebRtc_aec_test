@@ -105,7 +105,7 @@ void WebRtcAgcTest(char *filename, char *outfilename,int fs)
 
 		int minLevel = 0;
 		int maxLevel = 255;
-		int agcMode  = kAgcModeFixedDigital;
+		int agcMode  = kAgcModeAdaptiveDigital; // kAgcModeUnchanged, kAgcModeAdaptiveAnalog,kAgcModeAdaptiveDigital,kAgcModeFixedDigital
 		WebRtcAgc_Init(agcHandle, minLevel, maxLevel, agcMode, fs);
 
 		WebRtcAgc_config_t agcConfig;
@@ -208,12 +208,13 @@ int WebRtcAecTest()
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	printf("email: as_yhc@163.com\n");
 	WebRtcAecTest();
 
-	WebRtcAgcTest("byby_8K_1C_16bit.pcm","byby_8K_1C_16bit_agc.pcm",8000);
+	//WebRtcAgcTest("byby_8K_1C_16bit.pcm","byby_8K_1C_16bit_agc_digital.pcm",8000);
 
-	WebRtcNS32KSample("lhydd_1C_16bit_32K.PCM","lhydd_1C_16bit_32K_ns.pcm",32000,1);// 0 1 2 3
-	WebRtcNS32KSample("gudao.PCM", "gudao_ns.pcm", 32000, 2);// 0 1 2 3
+	//WebRtcNS32KSample("lhydd_1C_16bit_32K.PCM","lhydd_1C_16bit_32K_ns.pcm",32000,1);// 0 1 2 3
+	//WebRtcNS32KSample("gudao.PCM", "gudao_ns.pcm", 32000, 2);// 0 1 2 3
 
 	printf("…˘“Ù‘ˆ“Ê£¨Ωµ‘ÎΩ· ¯...\n");
 
